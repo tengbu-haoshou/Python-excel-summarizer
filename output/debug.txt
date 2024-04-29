@@ -1,0 +1,6 @@
+.\input\excel\DataTable-1.xlsx
+    1: 1, Apple, 1000, 1000
+    2: None, Orange, None, None
+    3: 3, None, None, None
+.\input\excel\DataTable-2.xlsx
+    1: 1, Brue Berry, 2000, 2000
