@@ -31,7 +31,7 @@ import getopt
 import shutil
 import datetime
 import openpyxl
-from openpyxl.styles import Font, Alignment
+from openpyxl.styles import Font, Alignment, PatternFill
 from openpyxl.styles.borders import Border, Side
 
 #
@@ -39,32 +39,15 @@ from openpyxl.styles.borders import Border, Side
 #
 IN_DIR = '.\\input'
 OUT_DIR = '.\\output'
-# IN_SRC_ROOT = 'D:\\Developments\\PyCharmProjects\\excel_summarize\\input'  # noqa
+# IN_SRC_ROOT = 'D:\\Developments\\PyCharmProjects\\tool-excel_summarize\\input'  # noqa
 IN_SRC_ROOT = '.\\input'
 IN_SRC_RELATIVE = '\\excel'
 IN_EXCEL = IN_DIR + '\\excel_summary_template.xlsx'
 OUT_EXCEL = OUT_DIR + '\\excel_summary.xlsx'
-OUT_DEBUG = OUT_DIR + '\\debug.txt'
 IN_SHEET = 'Data Table'
 OUT_SHEET = 'Summary of Data Tables'
 EXTEND = '.xlsx'
-
-#
-# Output Excel Cell Format
-#
-ALIGN_LEFT = Alignment(horizontal='left', vertical='top', wrap_text=True)
-ALIGN_CENTER = Alignment(horizontal='center', vertical='top', wrap_text=True)
-ALIGN_RIGHT = Alignment(horizontal='right', vertical='top', wrap_text=True)
-FONT_MEIRYO = Font(name='Meiryo UI', size=10, color='000000')
-NUMBER_FORMAT_CUBE_INT = '#,##0_ '
-NUMBER_FORMAT_CUBE_CENT = '#,##0.00_ '
-NUMBER_FORMAT_NO_CUBE_INT = '0_ '
-NUMBER_FORMAT_NO_CUBE_CENT = '0.00_ '
-BORDER_ALL = Border(
-    top=Side(style='thin', color='000000'),
-    bottom=Side(style='thin', color='000000'),
-    left=Side(style='thin', color='000000'),
-    right=Side(style='thin', color='000000'))
+OUT_DEBUG = OUT_DIR + '\\debug.txt'
 
 #
 # Input Excel Cell Position (1 Origin)
@@ -79,7 +62,27 @@ OUT_CELL_ROW_OFFSET = 4
 OUT_CELL_COL_OFFSET = 2
 
 #
-# Output Cell Formats
+# Output Excel Cell Format
+#
+ALIGN_LEFT = Alignment(horizontal='left', vertical='top', wrap_text=True)
+ALIGN_CENTER = Alignment(horizontal='center', vertical='top', wrap_text=True)
+ALIGN_RIGHT = Alignment(horizontal='right', vertical='top', wrap_text=True)
+FONT_MEIRYO = Font(name='Meiryo UI', size=10, color='000000')
+FONT_MEIRYO_GRAY = Font(name='Meiryo UI', size=10, color='C0C0C0')
+FONT_MEIRYO_BOLD = Font(name='Meiryo UI', size=10, color='000000', bold=True)
+FILL_BRIGHT_GRAY = PatternFill(patternType='solid', fgColor='EBECF0')
+NUMBER_FORMAT_CUBE_INT = '#,##0_ '
+NUMBER_FORMAT_CUBE_CENT = '#,##0.00_ '
+NUMBER_FORMAT_NO_CUBE_INT = '0_ '
+NUMBER_FORMAT_NO_CUBE_CENT = '0.00_ '
+BORDER_ALL = Border(
+    top=Side(style='thin', color='000000'),
+    bottom=Side(style='thin', color='000000'),
+    left=Side(style='thin', color='000000'),
+    right=Side(style='thin', color='000000'))
+
+#
+# Output Excel Cell Formats
 #
 CELL_FORMATS = [
     {'font': FONT_MEIRYO, 'alignment': None,       'number_format': NUMBER_FORMAT_NO_CUBE_INT},
