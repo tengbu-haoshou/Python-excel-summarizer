@@ -147,9 +147,6 @@ class WriteExcel:
 # Scan Excel File
 def scan_excel_file(write_excel: WriteExcel, full_path_file: str,  fp) -> int:
 
-    if fp is not None:
-        fp.write('%s\n' % full_path_file)
-
     read_excel = ReadExcel(full_path_file, IN_SHEET)
     row_min, row_max, col_min, col_max = read_excel.range()
 
@@ -206,9 +203,12 @@ def seek_directories(excel: WriteExcel, level: int, dir_root: str, dir_relative:
 
     files.sort(key=str.lower)
     for file in files:
+        full_path_file = os.path.join(dir_root, file)
+        if fp is not None:
+            fp.write('%s\n' % full_path_file)
         base, ext = os.path.splitext(file)
         if ext == EXTEND and not base.startswith('~'):
-            lines = scan_excel_file(excel, os.path.join(dir_root, file), fp)
+            lines = scan_excel_file(excel, full_path_file, fp)
             print('%s %s %d' % (dir_relative, file, lines))
 
     dirs.sort(key=str.lower)
