@@ -195,7 +195,6 @@ def seek_directories(excel: WriteExcel, level: int, dir_root: str, dir_relative:
     files = []
 
     for path in os.listdir(dir_root):
-
         if os.path.isfile(os.path.join(dir_root, path)):
             files.append(path)
         else:
