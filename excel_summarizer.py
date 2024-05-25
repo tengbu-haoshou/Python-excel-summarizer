@@ -22,9 +22,7 @@ Options:
         Print this message and exit.
 """
 
-#
 # Import Libraries
-#
 import os
 import sys
 import getopt
@@ -34,9 +32,7 @@ import openpyxl
 from openpyxl.styles import Font, Alignment, PatternFill
 from openpyxl.styles.borders import Border, Side
 
-#
 # Input, Output
-#
 IN_DIR = '.\\input'
 OUT_DIR = '.\\output'
 # IN_SRC_ROOT = 'D:\\Developments\\PyCharmProjects\\tool-excel_summarize\\input'  # noqa
@@ -49,21 +45,15 @@ OUT_SHEET = 'Summary of Data Tables'
 EXTEND = '.xlsx'
 OUT_DEBUG = OUT_DIR + '\\debug.txt'
 
-#
 # Input Excel Cell Position (1 Origin)
-#
 IN_CELL_ROW_OFFSET = 4
 IN_CELL_COL_OFFSET = 2
 
-#
 # Output Excel Cell Position (1 Origin)
-#
 OUT_CELL_ROW_OFFSET = 4
 OUT_CELL_COL_OFFSET = 2
 
-#
 # Output Excel Cell Format
-#
 ALIGN_LEFT = Alignment(horizontal='left', vertical='top', wrap_text=True)
 ALIGN_CENTER = Alignment(horizontal='center', vertical='top', wrap_text=True)
 ALIGN_RIGHT = Alignment(horizontal='right', vertical='top', wrap_text=True)
@@ -81,9 +71,7 @@ BORDER_ALL = Border(
     left=Side(style='thin', color='000000'),
     right=Side(style='thin', color='000000'))
 
-#
 # Output Excel Cell Formats
-#
 CELL_FORMATS = [
     {'font': FONT_MEIRYO, 'alignment': None,       'number_format': NUMBER_FORMAT_NO_CUBE_INT},
     {'font': FONT_MEIRYO, 'alignment': ALIGN_LEFT, 'number_format': None},
@@ -92,9 +80,7 @@ CELL_FORMATS = [
 ]
 
 
-#
 # Read Excel
-#
 class ReadExcel:
 
     def __init__(self, in_excel: str, in_sheet: str) -> None:
