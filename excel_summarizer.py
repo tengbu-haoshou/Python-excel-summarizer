@@ -4,7 +4,7 @@
 # excel_summarizer.py
 #
 # Date    : 2024-04-29
-# Auther  : Hirotoshi FUJIBE
+# Author  : Hirotoshi FUJIBE
 # History :
 #
 # Copyright (c) 2024 Hirotoshi FUJIBE
